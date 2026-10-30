@@ -88,6 +88,11 @@ A **majority vote** across segments gives the final per-file decision.
 - Batch size 32 / 64 / 128 (varies by machine), 50 to 100 epochs
 - Loss: MSE, learning rate 0.001
 
+### Model Evaluation
+<img width="2905" height="1069" alt="image" src="https://github.com/user-attachments/assets/8fb8e230-430a-40e6-beca-177f5b2e777a" />
+
+<img width="1500" height="864" alt="image" src="https://github.com/user-attachments/assets/9d99ec73-53d6-4a31-a274-a7ab9a0446a1" />
+
 ---
 
 ## System Architecture
