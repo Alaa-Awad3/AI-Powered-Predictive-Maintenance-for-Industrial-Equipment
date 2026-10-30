@@ -9,6 +9,8 @@ Both modules are served through a FastAPI backend with a Gradio web interface, a
 
 **Live demo (RUL prediction):** [Hugging Face Space](https://huggingface.co/spaces/Alaa-Awad/Turbofan_Engine_RUL_Prediction)
 
+<img width="1089" height="569" alt="Screenshot (422)" src="https://github.com/user-attachments/assets/dba18e8a-f145-47ed-9bb1-f59d6776b710" />
+
 ---
 
 ## Problem
@@ -50,12 +52,17 @@ FD004 is the hardest C-MAPSS subset because of its multiple operating conditions
 - **LSTM** to capture long-term temporal dependencies in degradation behavior
 - **TS2Vec + LSTM**: TS2Vec is used as a self-supervised representation learner, and its embeddings feed the LSTM
 
+  <img width="2898" height="1148" alt="image" src="https://github.com/user-attachments/assets/de932451-bdfc-4490-a001-f691927f0a45" />
+
+
 ### Results
 
 | Model | Validation RMSE | Validation R² | Test RMSE | Test MAE | Test R² |
 |---|---|---|---|---|---|
 | LSTM | 31.69 | 0.77 | 22.89 | 17.07 | 0.82 |
 | TS2Vec + LSTM | 28.05 | 0.82 | 23.35 | 17.47 | 0.82 |
+
+<img width="1437" height="600" alt="image" src="https://github.com/user-attachments/assets/6cb73ae1-03de-4dc9-a197-7ab82d319eff" />
 
 ---
 
@@ -64,17 +71,27 @@ FD004 is the hardest C-MAPSS subset because of its multiple operating conditions
 ### Dataset
 **MIMII** (Sound Dataset for Malfunctioning Industrial Machine Investigation and Inspection): valves, pumps, fans and slide rails, with real factory background noise (8-channel mic array, 16 kHz). This project uses machine IDs **00, 02, 04 and 06** of each machine type.
 
+<img width="2969" height="682" alt="image" src="https://github.com/user-attachments/assets/77e7c61f-ed13-44cf-860d-45407ab2dd0b" />
+
+<img width="1951" height="527" alt="image" src="https://github.com/user-attachments/assets/bebb5eec-b3eb-4413-8d82-b4882647156a" />
+
+
 ### Preprocessing
 - Audio loaded and normalized with **Librosa**
 - Split into 1-second non-overlapping segments
 - Features per segment: **MFCC (40-D)** + **YAMNet embeddings (1024-D)** concatenated into a 1064-D vector
 - A context window of 5 consecutive segments is flattened into the final input vector
 
+<img width="2613" height="965" alt="image" src="https://github.com/user-attachments/assets/f4ecc2ec-3237-4a11-899c-56d5a68dc915" />
+
 ### Model
 A fully connected **autoencoder** trained on normal sounds only:
 - **Encoder:** 4 fully connected layers (128 units) with batch norm, ReLU and dropout (0.2)
 - **Bottleneck:** 8 dimensions
 - **Decoder:** mirrors the encoder
+
+<img width="2816" height="790" alt="image" src="https://github.com/user-attachments/assets/ea25724b-251a-4fbb-8a38-34a0ab24639f" />
+
 
 Anomalies are flagged when reconstruction error (MSE) exceeds a threshold. Two threshold strategies were tested:
 - **Statistical:** mean reconstruction error + 1 standard deviation
@@ -90,6 +107,8 @@ A **majority vote** across segments gives the final per-file decision.
 
 ### Model Evaluation
 <img width="2905" height="1069" alt="image" src="https://github.com/user-attachments/assets/8fb8e230-430a-40e6-beca-177f5b2e777a" />
+
+<img width="2931" height="1142" alt="image" src="https://github.com/user-attachments/assets/dd553c80-64df-4966-9df1-69e7c0a11103" />
 
 <img width="1500" height="864" alt="image" src="https://github.com/user-attachments/assets/9d99ec73-53d6-4a31-a274-a7ab9a0446a1" />
 
@@ -119,6 +138,10 @@ The RUL model is also deployed standalone on Hugging Face Spaces.
 ## Experiment Tracking
 
 MLflow is used to log training runs, compare configurations (optimizers, batch sizes), record RMSE / MAE / R², and save models and artifacts for reproducibility.
+
+<img width="2217" height="1084" alt="image" src="https://github.com/user-attachments/assets/bb11f7e4-c52b-4ace-8cb4-5ac2ad4641f5" />
+<img width="1044" height="528" alt="Screenshot (421)" src="https://github.com/user-attachments/assets/ad65272d-e53a-4c47-be83-b30227cc2a12" />
+
 
 ---
 
