@@ -117,44 +117,6 @@ MLflow is used to log training runs, compare configurations (optimizers, batch s
 
 ---
 
-## Getting Started
-
-> Fill these in to match your repo.
-
-```bash
-# Clone
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the backend
-uvicorn api:app --reload
-
-# In another terminal, start the UI
-python gradio_ui.py
-
-# (Optional) browse experiments
-mlflow ui
-```
-
-## Repository Structure
-
-> Update to match your actual layout.
-
-```
-.
-├── api.py             # FastAPI prediction backend
-├── gradio_ui.py       # Gradio interface
-├── notebooks/         # Data analysis and training notebooks
-├── models/            # Saved models
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## Challenges
 
 - **FD004 complexity:** multiple operating conditions and fault modes make RUL harder to model
