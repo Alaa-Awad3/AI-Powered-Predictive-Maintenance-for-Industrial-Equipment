@@ -164,7 +164,3 @@ Python, TensorFlow / Keras, scikit-learn, Librosa, YAMNet, TS2Vec, MLflow, FastA
 ## Author
 
 **Alaa Awad**
-
-## License
-
-> Add a license (e.g. MIT) if you want others to reuse the code.
