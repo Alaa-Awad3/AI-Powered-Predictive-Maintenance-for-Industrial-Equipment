@@ -9,7 +9,7 @@ Both modules are served through a FastAPI backend with a Gradio web interface, a
 
 **Live demo (RUL prediction):** [Hugging Face Space](https://huggingface.co/spaces/Alaa-Awad/Turbofan_Engine_RUL_Prediction)
 
-<img width="1089" height="569" alt="Screenshot (422)" src="https://github.com/user-attachments/assets/dba18e8a-f145-47ed-9bb1-f59d6776b710" />
+<img width="1044" height="528" alt="Screenshot (421)" src="https://github.com/user-attachments/assets/86828b15-4041-412f-a7ff-7c96856cd3e1" />
 
 <img width="1089" height="569" alt="Screenshot (422)" src="https://github.com/user-attachments/assets/9c110a81-03d7-47b6-88de-d9d3dc2e38b0" />
 
